@@ -27,26 +27,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final int b[]={0};
+        final int[] b = {0};
 
         Red = (Button) findViewById(R.id.red);
         Red.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (b[0]==0) {
+                if (b[0] == 0) {
                     Red.setBackgroundColor(Color.RED);
-                    b[0]==1)
+                    b[0] = 1;
+                } else {
+
+                    Red.setBackgroundColor(Color.parseColor("#ffffff"));
+                    Red.setText("red");
+                    b[0] = 0;
                 }
-                else
             }
         });
-
+        final int[] c = {0};
         Blue = (Button) findViewById(R.id.blue);
         Blue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Blue.setBackgroundColor(Color.BLUE);
-
+                if (c[0] == 0) {
+                    Blue.setBackgroundColor(Color.BLUE);
+                    c[0] = 1;
+                } else {
+                    Blue.setBackgroundColor(Color.parseColor("#ffffff"));
+                    Blue.setText("blue");
+                    c[0] = 0;
+                    ;
+                }
             }
         });
         final int[] a = {0};
@@ -62,18 +73,27 @@ public class MainActivity extends AppCompatActivity {
                     a[0] = 1;
                 } else {
                     Green.setBackgroundColor(Color.parseColor("#ffffff"));
-                    Green.setText("alternate applied");
+                    Green.setText("green");
                     a[0] = 0;
                 }
             }
         });
 
+                final int d[]={0};
         Grey = (Button) findViewById(R.id.grey);
 
         Grey.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Grey.setBackgroundColor(Color.GRAY);
+                if(d[0]==0) {
+                    Grey.setBackgroundColor(Color.GRAY);
+                    d[0] = 1;
+                }
+                    else{
+                        Grey.setBackgroundColor(Color.parseColor("#ffffff"));
+                    Grey.setText("grey");
+                    d[0]=0;
+                }
             }
         });
 
@@ -108,13 +128,38 @@ public class MainActivity extends AppCompatActivity {
             });
         }
         {
-
+            final int[] m={0};
             Magenta = (Button) findViewById(R.id.magenta);
             Magenta.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Magenta.setBackgroundColor(Color.parseColor("#ff1068"));
+                    switch (m[0])
+                    {
+                    case 1:
+                        if(m[0] == 0)
+                        {
+                        Magenta.setBackgroundColor(Color.parseColor("#ff1068"));
+                        m[0]++;}
+                        break;
+                        case 2:
+                            if(m[0] == 1)
+                            {Magenta.setBackgroundColor(Color.parseColor("#FD75EFFF"));
+                        Magenta.setText("sky blue");
+                        m[0]++;}
+                            break;
+                        case 3:
+                        if(m[0] == 2) {
+                            Magenta.setBackgroundColor(Color.parseColor("#FFED6C35"));
+                            Magenta.setText("orange");
+                            m[0]=0;
+                        }
+                        break;
+                            default:
+                                break;
+                    }
                 }
+
+
             });
         }
 
